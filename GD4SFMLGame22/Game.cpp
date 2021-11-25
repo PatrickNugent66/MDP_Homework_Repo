@@ -39,14 +39,13 @@ void Game::Run()
 
 void Game::ProcessInput()
 {
-	CommandQueue& commands = m_world.GetCommandQueue();
+	CommandQueue& commands = m_world.getCommandQueue();
 
 	sf::Event event;
 	while (m_window.pollEvent(event))
 	{
 		m_player.HandleEvent(event, commands);
-
-		if(event.type == sf::Event::Closed)
+		if (event.type == sf::Event::Closed)
 		{
 			m_window.close();
 		}

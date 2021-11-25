@@ -1,8 +1,10 @@
 #pragma once
 #include "StateID.hpp"
 #include "ResourceIdentifiers.hpp"
+
 #include <SFML/System/Time.hpp>
 #include <SFML/Window/Event.hpp>
+
 #include <memory>
 
 namespace sf
@@ -38,6 +40,7 @@ protected:
 	void RequestStackPush(StateID state_id);
 	void RequestStackPop();
 	void RequestStackClear();
+
 	Context GetContext() const;
 
 private:

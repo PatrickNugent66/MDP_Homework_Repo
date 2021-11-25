@@ -16,14 +16,15 @@ struct Command
 template<typename GameObject, typename Function>
 std::function<void(SceneNode&, sf::Time)> DerivedAction(Function fn)
 {
-	//return lambda function
 	return [=](SceneNode& node, sf::Time dt)
 	{
-		//check if cast is safe
+		//Check if cast is safe
 		assert(dynamic_cast<GameObject*>(&node) != nullptr);
 
-		//Downcast node and invoke function
+		//Downcast node and invoke the function
 		fn(static_cast<GameObject&>(node), dt);
 	};
 }
+
+
 

@@ -27,6 +27,7 @@ private:
 
 	TextureHolder m_textures;
 	FontHolder m_fonts;
+
 	StateStack m_stack;
 
 	sf::Text m_statistics_text;

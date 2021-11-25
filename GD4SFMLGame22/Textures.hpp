@@ -5,5 +5,7 @@ enum class Textures
 	kRaptor,
 	kDesert,
 	kTitleScreen,
-	kPauseScreen
+	kButtonNormal,
+	kButtonSelected,
+	kButtonPressed
 };

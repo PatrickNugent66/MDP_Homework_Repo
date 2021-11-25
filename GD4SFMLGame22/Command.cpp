@@ -1,8 +1,7 @@
 #include "Command.hpp"
-
 Command::Command()
-	: action(),
-	category(Category::kNone)
+	: action()
+	, category(Category::kNone)
 {
 	
 }

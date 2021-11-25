@@ -26,7 +26,7 @@ Player::Player()
 	m_key_binding[sf::Keyboard::S] = PlayerAction::kMoveDown;
 
 	//Set initial action bindings
-	InitializeActions();
+	InitialiseActions();
 
 	//Assign all categories to the player's aircraft
 	for(auto& pair : m_action_binding)
@@ -34,6 +34,7 @@ Player::Player()
 		pair.second.category = Category::kPlayerAircraft;
 	}
 }
+
 
 void Player::HandleEvent(const sf::Event& event, CommandQueue& commands)
 {
@@ -50,7 +51,7 @@ void Player::HandleEvent(const sf::Event& event, CommandQueue& commands)
 void Player::HandleRealtimeInput(CommandQueue& commands)
 {
 	//Check if any keybinding keys are pressed
-	for(auto pair : m_key_binding)
+	for(auto pair: m_key_binding)
 	{
 		if(sf::Keyboard::isKeyPressed(pair.first) && IsRealtimeAction(pair.second))
 		{
@@ -85,18 +86,17 @@ sf::Keyboard::Key Player::GetAssignedKey(PlayerAction action) const
 			return pair.first;
 		}
 	}
-
 	return sf::Keyboard::Unknown;
 }
 
-void Player::InitializeActions()
+void Player::InitialiseActions()
 {
-	const float kPlayerSpeed = 200.f;
+	const float player_speed = 200.f;
 
-	m_action_binding[PlayerAction::kMoveLeft].action = DerivedAction<Aircraft>(AircraftMover(-kPlayerSpeed, 0.f));
-	m_action_binding[PlayerAction::kMoveRight].action = DerivedAction<Aircraft>(AircraftMover(kPlayerSpeed, 0.f));
-	m_action_binding[PlayerAction::kMoveUp].action = DerivedAction<Aircraft>(AircraftMover(0.f, -kPlayerSpeed));
-	m_action_binding[PlayerAction::kMoveDown].action = DerivedAction<Aircraft>(AircraftMover(0.f, kPlayerSpeed));
+	m_action_binding[PlayerAction::kMoveLeft].action = DerivedAction<Aircraft>(AircraftMover(-player_speed, 0.f));
+	m_action_binding[PlayerAction::kMoveRight].action = DerivedAction<Aircraft>(AircraftMover(+player_speed, 0.f));
+	m_action_binding[PlayerAction::kMoveUp].action = DerivedAction<Aircraft>(AircraftMover(0.f, -player_speed));
+	m_action_binding[PlayerAction::kMoveDown].action = DerivedAction<Aircraft>(AircraftMover(0, player_speed));
 }
 
 bool Player::IsRealtimeAction(PlayerAction action)

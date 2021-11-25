@@ -36,5 +36,6 @@ unsigned Aircraft::GetCategory() const
 		return Category::kPlayerAircraft;
 	default:
 		return Category::kEnemyAircraft;
+
 	}
 }

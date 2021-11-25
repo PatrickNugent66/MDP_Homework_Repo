@@ -15,6 +15,7 @@ public:
 private:
 	sf::Sprite m_background_sprite;
 	sf::Text m_text;
+
 	bool m_show_text;
 	sf::Time m_text_effect_time;
 };

@@ -90,7 +90,7 @@ void SceneNode::OnCommand(const Command& command, sf::Time dt)
 		command.action(*this, dt);
 	}
 
-	//pass command on to children
+	//Pass command on to children
 	for(Ptr& child : m_children)
 	{
 		child->OnCommand(command, dt);

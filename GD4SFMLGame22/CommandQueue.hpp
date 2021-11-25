@@ -1,7 +1,7 @@
 #pragma once
 #include "Command.hpp"
 #include <queue>
-
+// TODO Make CommandQueue class a Singleton
 class CommandQueue
 {
 public:

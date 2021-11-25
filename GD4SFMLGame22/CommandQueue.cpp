@@ -16,5 +16,3 @@ bool CommandQueue::IsEmpty() const
 {
 	return m_queue.empty();
 }
-
-

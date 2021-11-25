@@ -27,13 +27,14 @@ public:
 	explicit World(sf::RenderWindow& window);
 	void Update(sf::Time dt);
 	void Draw();
-	CommandQueue& GetCommandQueue();
+	CommandQueue& getCommandQueue();
 
 private:
 	void LoadTextures();
 	void BuildScene();
 	void AdaptPlayerPosition();
 	void AdaptPlayerVelocity();
+	
 
 private:
 	sf::RenderWindow& m_window;

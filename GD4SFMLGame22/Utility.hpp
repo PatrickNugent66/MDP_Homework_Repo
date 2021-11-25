@@ -1,5 +1,4 @@
 #pragma once
-
 namespace sf
 {
 	class Sprite;
@@ -9,7 +8,8 @@ namespace sf
 class Utility
 {
 public:
-	static void CenterOrigin(sf::Sprite& sprite);
-	static void CenterOrigin(sf::Text& text);
+	static void CentreOrigin(sf::Sprite& sprite);
+	static void CentreOrigin(sf::Text& text);
+
 };
 
